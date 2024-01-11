@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "IRANSans";
+  src: local("IRANSans"), url("./fonts/IRANSans.woff2") format("woff");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IRANSans";
+}
+
+.appContainer {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  background: url("../public/img/artistic-blurry-colorful-wallpaper-background.jpg");
+  background-size: cover;
+}
+
+.animate {
+  animation: animate 2s infinite ease alternate;
+}
+
+@keyframes animate {
+  to {
+    transform: translateY(20px);
+  }
+}
+
+.textStroke {
+  -webkit-text-stroke: 1px white;
+}
+.moving {
+  animation: move 2s linear both;
+}
+
+@keyframes move {
+  to {
+    width: 100%;
+  }
+}
