@@ -37,7 +37,7 @@ const Hero = () => {
             </Sphere>
           </Canvas>
           <img
-            src="../../public/img/Code review-amico.png"
+            src="../../public/img/Code-review-amico.webp"
             className="absolute top-0 left-0 right-0 bottom-0 object-contain animate m-auto h-[400px] w-[500px]
             "
             alt=""
