@@ -1,17 +1,17 @@
-import Contact from "./components/Contact";
-import Hero from "./components/Hero";
-import Test from "./components/Test";
-import Who from "./components/Who";
-import Works from "./components/Works";
+import Contact from "./components/contact/Contact";
+import Hero from "./components/home/Hero";
+import { default as Skills } from "./components/skills/Skills";
+import Who from "./components/who/Who";
+import Connection from "./components/works/Connection";
 import "./index.css";
 function App() {
   return (
-    <div dir="" className="appContainer">
+    <div className=" font-bold cursor-pointer bg-gradient-to-r from-gray-950   to-indigo-900  appContainer">
       <Hero />
+      <Skills />
       <Who />
-      <Works />
+      <Connection />
       <Contact />
-      <Test />
     </div>
   );
 }
