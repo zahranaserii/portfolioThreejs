@@ -1,9 +1,20 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { animated, useTransition } from "react-spring";
 import DynamicScaleSphere from "./components/DynamicScaleSphere";
 import Navbar from "./components/Navbar";
 
 const Hero = () => {
+  const welcome = " Welcome To My Portfolio";
+
+  //hooks
+  const transition = useTransition(welcome, {
+    from: { opacity: 0, transform: "translateY(-50px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: { opacity: 0, transform: "translateY(-50pX)" },
+    config: { duration: 800 },
+  });
+
   return (
     <div
       id="About"
@@ -12,9 +23,14 @@ const Hero = () => {
       <Navbar />
       <div className=" md:grid md:grid-cols-3 md:justify-between  h-full px-12 ">
         <div className="text-white md:col-span-1  flex flex-col gap-3 ">
-          <h3 className="text-4xl font-bold cursor-pointer bg-gradient-to-r  from-orange-200  to-pink-600  text-transparent bg-clip-text  ">
-            Welcome To My Portfolio
-          </h3>
+          {transition((styles, item) => (
+            <animated.h3
+              style={styles}
+              className="text-4xl font-bold cursor-pointer bg-gradient-to-r  from-orange-200  to-pink-600  text-transparent bg-clip-text  "
+            >
+              {item}
+            </animated.h3>
+          ))}
           <div className="flex items-center gap-2 ">
             <span className="text-lg cursor-pointer">I'm</span>
             <div className="flex items-center">
